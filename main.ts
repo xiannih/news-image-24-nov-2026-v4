@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const source = join(here, "entry.png");
+// Output dir: the harness sets MAKEFUN_OUTPUT_DIR; OUT_DIR is a local fallback.
 const outDir = process.env.MAKEFUN_OUTPUT_DIR || process.env.OUT_DIR || "/output";
 mkdirSync(outDir, { recursive: true });
 
